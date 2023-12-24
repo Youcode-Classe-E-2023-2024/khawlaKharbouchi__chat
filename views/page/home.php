@@ -171,25 +171,19 @@
         </div>
       </div>
     </div>
-    <div class="chat-input-wrapper">
-      <button class="chat-attachment-btn">
+    <div class="chat-input-wrapper" >
+     <div class="input-wrapper">
+       <button class="chat-attachment-btn">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-paperclip" viewBox="0 0 24 24">
           <defs/>
           <path d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48"/>
         </svg>
       </button>
-      <div class="input-wrapper">
+      
         <input type="text" class="chat-input" placeholder="Enter your message here">
-        <button class="emoji-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-smile" viewBox="0 0 24 24">
-          <defs/>
-          <circle cx="12" cy="12" r="10"/>
-          <path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/>
-        </svg>
-      </button>
-      </div>
       <button class="chat-send-btn">Send</button>
     </div>
+  </div>
   </div>
   <div class="app-right">
     <div class="app-profile-box">

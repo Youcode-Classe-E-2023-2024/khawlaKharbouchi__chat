@@ -391,6 +391,7 @@ body {
 
 .chat-wrapper {
   overflow: auto;
+  
 }
 
 .chat-input {
@@ -401,7 +402,7 @@ body {
   margin-right: 4px;
   background-color: var(--chat-input);
   color: var(--text-dark);
-  
+ 
   &:placeholder {
     color: var(--text-light);
     font-size: 12px;
@@ -432,24 +433,10 @@ body {
   background-color: var(--chat-input);
 }
 
-.emoji-btn {
-  border: none;
-  background-color: transparent;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 4px;
-  color: #ffca3e;
-}
-
 .chat-send-btn {
   height: 32px;
   color: #fff;
-  background-color: var(--button-bg);
-  border: none;
-  border-radius: 4px;
-  padding: 0 32px 0 10px;
+
   font-size: 12px;
   background-position: center right 8px;
   background-repeat: no-repeat;
