@@ -28,12 +28,20 @@ class User
         $result = $db->query("SELECT * FROM users");
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+    static function selectwhere($var)
+    {
+        global $db;
+        $result = $db->query("SELECT * FROM users $var");
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+    
 
     function edit()
     {
         global $db;
         return $db->query("UPDATE users SET profile = '$this->profil', users_email = '$this->email', users_username = '$this->username' WHERE users_id = '$this->id'");
     }
+
 
     public function setPassword($pwd)
     {
