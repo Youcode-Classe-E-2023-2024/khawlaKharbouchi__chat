@@ -6,9 +6,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="home.css">
-
     <link rel="icon" href="logo.png" type="image/png">
     <title>home</title>
+    <style>
+  button {
+    &.dark {
+        --background: #2F3545;
+        --shadow: 0 2px 8px -1px #{rgba(#151924, .32)};
+        --shadow-hover: 0 4px 20px -2px #{rgba(#151924, .5)};
+    }
+    &.white {
+        --background: #fff;
+        --text: #275efe;
+        --shadow: 0 2px 8px -1px #{rgba(#121621, .04)};
+        --shadow-hover: 0 4px 20px -2px #{rgba(#121621, .12)};
+    }
+    &.fast {
+        --duration: .32s;
+    }
+}
+
+button {
+    --background: #275efe;
+    --text: #fff;
+    --font-size: 16px;
+    --duration: .44s;
+    --move-hover: -4px;
+    --shadow: 0 2px 8px -1px #{rgba(#275efe, .32)};
+    --shadow-hover: 0 4px 20px -2px #{rgba(#275efe, .5)};
+    --font-shadow: var(--font-size);
+    padding: 16px 32px;
+    font-family: 'Roboto';
+    font-weight: 500;
+    line-height: var(--font-size);
+    border-radius: 24px;
+    display: block;
+    outline: none;
+    appearance: none;
+    border: none;
+    text-decoration: none;
+    font-size: var(--font-size);
+    letter-spacing: .5px;
+    background: var(--background);
+    color: var(--text);
+    box-shadow: var(--shadow);
+    transform: translateY(var(--y)) translateZ(0);
+    transition: transform var(--duration) ease, box-shadow var(--duration) ease;
+    div {
+        display: flex;
+        overflow: hidden;
+        text-shadow: 0 var(--font-shadow) 0 var(--text);
+        span {
+            display: block;
+            backface-visibility: hidden;
+            font-style: normal;
+            transition: transform var(--duration) ease;
+            transform: translateY(var(--m)) translateZ(0);
+            $i: 1;
+            @while $i < 12 {
+                &:nth-child(#{$i}) {
+                    transition-delay: $i / 20 + s;
+                }
+                $i: $i + 1;
+            }
+        }
+    }
+    &:hover {
+        --y: var(--move-hover);
+        --shadow: var(--shadow-hover);
+        span {
+            --m: calc(var(--font-size) * -1);
+        }
+    }
+    &.reverse {
+        --font-shadow: calc(var(--font-size) * -1);
+        &:hover {
+            span {
+                --m: calc(var(--font-size));
+            }
+        }
+    }
+}
+    </style>
 </head>
 
 <body>
@@ -27,7 +106,7 @@
     <div class="app-profile-box">
       <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80" alt="profile">
       <div class="app-profile-box-name">
-        Pam Beesly Halpert
+        khawla kha
         <button class="app-setting">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-settings" viewBox="0 0 24 24">
             <defs/>
@@ -181,8 +260,10 @@
       </button>
       
         <input type="text" class="chat-input" placeholder="Enter your message here">
-      <button class="chat-send-btn">Send</button>
-    </div>
+<div class="button-list">
+<button class="fast white">send</button>
+</div>
+     </div>
   </div>
   </div>
   <div class="app-right">
@@ -378,6 +459,9 @@ themeColors.forEach(themeColor => {
     themeColor.classList.add('active');
   });
 });
+</script>
+<script>
+  document.querySelectorAll('button').forEach(button => button.innerHTML = '<div><span>' + button.textContent.trim().split('').join('</span><span>') + '</span></div>');
 </script>
 </body>
 
