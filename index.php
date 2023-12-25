@@ -3,20 +3,20 @@
 include_once '_config/config.php';
 include_once '_functions/functions.php';
 include_once '_config/db.php';
-echo "h";
-dd($_SERVER['PHP_SELF']);
-echo "b";
+
+// dd($_SERVER['PHP_SELF']);
+
 spl_autoload_register(function ($class) {
-    echo "l";
+ 
     include_once '_classes/' . $class . '.php';
 });
-echo "k";
+
 if (isset($_GET['page']) && !empty($_GET['page'])) {
     $page = trim(strtolower($_GET['page']));
-    echo "imad";
+   
 } else {
     $page = 'home';
-    echo "hi";
+    
 }
 
 $all_pages = scandir('controllers');

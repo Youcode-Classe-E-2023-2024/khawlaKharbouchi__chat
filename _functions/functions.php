@@ -6,14 +6,14 @@
  * @param $var
  * @return void
  */
-function dd($var) {
-    echo '<pre>';
-    echo '<code>';
-    var_dump($var);
-    echo '</code>';
-    echo '</pre>';
+// function dd($var) {
+//     echo '<pre>';
+//     echo '<code>';
+//     var_dump($var);
+//     echo '</code>';
+//     echo '</pre>';
     
-}
+// }
 
 /**
  * Prevent inputs from XSS vulnerability.
