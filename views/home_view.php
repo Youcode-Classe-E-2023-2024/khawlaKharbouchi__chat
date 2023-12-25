@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,31 +16,31 @@
             <div class="flex justify-center">
                 <img src="logo.png" class="w-32 h-32 text-blue-600" />
             </div>
-<form action="index.php?page=home" method="POST">
-<div class="mt-4 rounded-md">
+            <form action="home_model.php" enctype="multipart/form-data" method="POST">
+                <div class="mt-4 rounded-md">
                     <div class="mt-4">
                         <label class="block" for="image">Upload file</label>
-                        <input
+                        <input name="profile"
                             class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
                             id="file_input" type="file">
                     </div>
                     <div class="mt-4">
                         <label class="block" for="Name">Name<label>
-                                <input type="text" placeholder="Name"
+                                <input type="text" placeholder="Name" name="users_username"
                                     class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
                     </div>
                     <div class="mt-4">
                         <label class="block" for="email">Email<label>
-                                <input type="text" placeholder="Email"
+                                <input type="email" placeholder="Email" name="users_email"
                                     class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
                     </div>
                     <div class="mt-4">
                         <label class="block">Password<label>
-                                <input type="password" placeholder="Password" name="password"
+                                <input type="password" placeholder="Password" name="users_password"
                                     class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
                     </div>
                     <div class="flex">
-                        <button class="w-full px-6 py-2 mt-4 text-white bg-blue-600 rounded-lg hover:bg-blue-900">Create
+                        <button type="submit" class="w-full px-6 py-2 mt-4 text-white bg-blue-600 rounded-lg hover:bg-blue-900">Create
                             Account</button>
                     </div>
                     <div class="mt-6 text-grey-dark">
@@ -53,4 +51,8 @@
                     </div>
                 </div>
             </form>
-</form>
+        </div>
+    </div>
+</body>
+
+</html>
