@@ -31,9 +31,7 @@ if ($_POST["users_email"] != "")
     User::INSERT($imageName, $_POST["users_username"], $_POST["users_email"], $_POST["users_password"]);
 
 
-
-    $email = "amina@gmail.com";
-    print_r(User::selectwhere("WHERE users_email = '$email'"));
+    print_r(User::selectwhere("WHERE users_email= '$email'"));
 $users = User::getAll();
 
 

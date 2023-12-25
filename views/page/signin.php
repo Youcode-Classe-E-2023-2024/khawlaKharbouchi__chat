@@ -15,7 +15,7 @@
              src="logo.noir.png" class="w-20 h-24 text-blue-600"  />
         </div>
 
-        <form action="" class="">
+        <form action="../../models/login_model.php" method="POST" class="">
             <div class="mt-4 rounded-md" >
 
                 <div class="mt-4">
