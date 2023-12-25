@@ -28,13 +28,13 @@ class User
         $result = $db->query("SELECT * FROM users");
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+
     static function selectwhere($var)
-    {
-        global $db;
-        $result = $db->query("SELECT * FROM users $var");
-        return $result->fetch_all(MYSQLI_ASSOC);
-    }
-    
+{
+    global $db;
+    $result = $db->query("SELECT * FROM users $var");
+    return $result->fetch_all(MYSQLI_ASSOC);
+}
 
     function edit()
     {
@@ -48,19 +48,19 @@ class User
         $this->password = password_hash($pwd, PASSWORD_DEFAULT);
     }
     public static function INSERT($profil, $username, $email, $pwd)
-{
-    global $db;
+    {
+        global $db;
 
-    try {
-        $hashedPassword = password_hash($pwd, PASSWORD_DEFAULT);
-        $query = "INSERT INTO users (profile, users_username, users_email, users_password) VALUES (?, ?, ?, ?)";
-        $stmt = $db->prepare($query);
-        $stmt->bind_param("ssss", $profil, $username, $email, $hashedPassword);
-        $result = $stmt->execute();
-        return $result;
-    } catch (mysqli_sql_exception $e) {
-        
+        try {
+            $hashedPassword = password_hash($pwd, PASSWORD_DEFAULT);
+            $query = "INSERT INTO users (profile, users_username, users_email, users_password) VALUES (?, ?, ?, ?)";
+            $stmt = $db->prepare($query);
+            $stmt->bind_param("ssss", $profil, $username, $email, $hashedPassword);
+            $result = $stmt->execute();
+            return $result;
+        } catch (mysqli_sql_exception $e) {
+
+        }
     }
-}
 
 }

@@ -1,9 +1,9 @@
 <?php
 
-     $_SERVER["REQUEST_METHOD"];
+$_SERVER["REQUEST_METHOD"];
 
 if (isset($_FILES["profile"])) {
-   
+
     $targetDir = "uploads/";
 
     $fileName = uniqid() . "_" . basename($_FILES["profile"]["name"]);
@@ -13,8 +13,8 @@ if (isset($_FILES["profile"])) {
 
 
     if (move_uploaded_file($_FILES["profile"]["tmp_name"], $targetFile)) {
-      $imageName = $fileName;
-        
+        $imageName = $fileName;
+
 
         echo "File uploaded successfully.";
     } else {
@@ -23,12 +23,17 @@ if (isset($_FILES["profile"])) {
 } else {
     echo "Invalid file or no file was chosen.";
 }
- $_POST["users_username"];
- $_POST["users_email"];
- $_POST["users_password"];
+$_POST["users_username"];
+$_POST["users_email"];
+$_POST["users_password"];
 
-if($_POST["users_email"] != "")
-    User::INSERT($imageName,$_POST["users_username"],$_POST["users_email"],$_POST["users_password"]);
+if ($_POST["users_email"] != "")
+    User::INSERT($imageName, $_POST["users_username"], $_POST["users_email"], $_POST["users_password"]);
+
+
+
+    $email = "amina@gmail.com";
+    print_r(User::selectwhere("WHERE users_email = '$email'"));
 $users = User::getAll();
 
 

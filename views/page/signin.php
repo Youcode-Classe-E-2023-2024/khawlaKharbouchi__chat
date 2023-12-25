@@ -20,12 +20,12 @@
 
                 <div class="mt-4">
                     <label class="block" for="email">Email<label>
-                            <input type="text" placeholder="Email"
+                            <input type="text" placeholder="Email" name="users_email"
                                 class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
                 </div>
                 <div class="mt-4">
                     <label class="block">Password<label>
-                            <input type="password" placeholder="Password"
+                            <input type="password" placeholder="Password" name="users_password"
                                 class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
                 </div>
 
