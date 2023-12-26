@@ -19,7 +19,7 @@
             <div class="mt-4 rounded-md" >
 
                 <div class="mt-4">
-                    <label class="block" for="email">Email<label>
+                    <label class="block" for="email">email<label>
                             <input type="text" placeholder="Email" name="users_email"
                                 class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
                 </div>
@@ -28,15 +28,13 @@
                             <input type="password" placeholder="Password" name="users_password"
                                 class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
                 </div>
-
-                <span class="text-xs text-red-400">Password must be same!</span>
                 <div class="flex">
                     <button class="w-full px-6 py-2 mt-4 text-white bg-blue-600 rounded-lg hover:bg-blue-900">Login</button>
                 </div>
                 <div class="mt-6 text-grey-dark">
-                    Forgot password
+                    I don't have account
                     <a class="text-blue-600 hover:underline" href="#">
-                        Log in
+                        register
                     </a>
                 </div>
             </div>

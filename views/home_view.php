@@ -17,7 +17,7 @@
             <div class="flex justify-center">
                 <img src="logo.png" class="w-32 h-32 text-blue-600" />
             </div>
-            <form action="home_model.php" enctype="multipart/form-data" method="POST">
+            <form action="models/home_model.php" enctype="multipart/form-data" method="POST">
                 <div class="mt-4 rounded-md">
                     <div class="mt-4">
                         <label class="block" for="image">Upload file</label>
@@ -47,7 +47,7 @@
                     </div>
                     <div class="mt-6 text-grey-dark">
                         Already have an account?
-                        <a class="text-blue-600 hover:underline" href="page/signin.php">
+                        <a class="text-blue-600 hover:underline" href="views/page/signin.php">
                             Log in
                         </a>
                     </div>

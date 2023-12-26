@@ -1,5 +1,5 @@
 <?php
-
+require_once __DIR__ . "/../_config/db.php";
 class User
 {
     public $id;
@@ -42,24 +42,40 @@ class User
         return $db->query("UPDATE users SET profile = '$this->profil', users_email = '$this->email', users_username = '$this->username' WHERE users_id = '$this->id'");
     }
 
-
-    public function setPassword($pwd)
-    {
-        $this->password = password_hash($pwd, PASSWORD_DEFAULT);
-    }
-    public static function INSERT($profil, $username, $email, $pwd)
+    public static function INSERT($profil, $username, $email, $password)
     {
         global $db;
-
+    
         try {
-            $hashedPassword = password_hash($pwd, PASSWORD_DEFAULT);
+
+            if (!$db) {
+                echo "Error: Database connection is not valid.";
+                return false;
+            }
+    
+            // Prepare the query
             $query = "INSERT INTO users (profile, users_username, users_email, users_password) VALUES (?, ?, ?, ?)";
             $stmt = $db->prepare($query);
-            $stmt->bind_param("ssss", $profil, $username, $email, $hashedPassword);
-            $result = $stmt->execute();
-            return $result;
+    
+            // Check if prepare was successful
+            if ($stmt) {
+                // Bind parameters
+                $stmt->bind_param("ssss", $profil, $username, $email, $password);
+    
+                // Execute the statement
+                $result = $stmt->execute();
+    
+                // Check for successful execution
+                if ($result) {
+                    echo "Data inserted successfully.";
+                } else {
+                    echo "Error executing query: " . $stmt->error;
+                }
+            } else {
+                echo "Error preparing statement: " . $db->error;
+            }
         } catch (mysqli_sql_exception $e) {
-
+            echo "Exception: " . $e->getMessage();
         }
     }
 
