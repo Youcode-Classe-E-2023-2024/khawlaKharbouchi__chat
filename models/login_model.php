@@ -8,4 +8,6 @@ if(count($imad ) === 0){
     echo "makayench";
 }else{
     echo "kayen";
+    header('Location: ../views/page/home.php');
+    exit();
 }

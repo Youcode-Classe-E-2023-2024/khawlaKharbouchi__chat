@@ -29,8 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $imageName = isset($imageName) ? $imageName : null; // Set default value if $imageName is not set
         if (User::INSERT($imageName, $_POST["users_username"], $_POST["users_email"], $_POST["users_password"])) {
             // Insertion successful, redirect to signin.php
-            header("Location: page/signin.php");
-            exit();
+
         } else {
             echo "Error inserting data.";
         }
@@ -39,6 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 } else {
     echo "Invalid request method.";
+
 }
 
 // Assuming User::getAll method is used to retrieve all users from the database
