@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,14 +44,14 @@
                 d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" />
             </svg>
           </button></a>
-        </div>
-        <p class="app-profile-box-title">UI Designer</p>
-        <div class="switch-status">
-          <input type="checkbox" name="switchStatus" id="switchStatus" checked>
-          <label class="label-toggle" for="switchStatus"></label>
-          <span class="toggle-text toggle-online">Online</span>
-          <span class="toggle-text toggle-offline">Offline</span>
-        </div>
+        </div></br>
+        <a href="signin.php"><button class="inline-flex items-center px-3 py-2 bg-indigo-500 hover:bg-indigo-600 text-white text-base font-medium rounded-md mx-auto">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" />
+  </svg>
+  Logout
+</button></a>
+        
       </div>
       <div class="chat-list-wrapper">
         <div class="active-users flex flex-row p-2 overflow-auto w-0 min-w-full">
